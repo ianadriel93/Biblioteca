@@ -1,0 +1,3 @@
+from interfaz.ventana_principal import iniciar_aplicacion
+
+iniciar_aplicacion()
