@@ -38,13 +38,16 @@ def crear_vista_compras(contenedor):
     # ---------- TABLA (historial) ----------
     columnas = ("id", "fecha", "cliente", "libro", "cantidad", "total")
     tabla = ttk.Treeview(contenedor, columns=columnas, show="headings")
-    for columna, encabezado in zip(
-        columnas, ("ID", "Fecha", "Cliente", "Libro", "Cantidad", "Total")
-    ):
-        tabla.heading(columna, text=encabezado)
-        tabla.column(columna, width=120)
-    tabla.grid(row=2, column=0, sticky="nsew", padx=10, pady=10)
 
+    encabezados = ("ID", "Fecha", "Cliente", "Libro", "Cantidad", "Total")
+    anchos = (60, 170, 200, 280, 90, 120)  # Suma ~920px, cubre todo el ancho
+
+    for columna, encabezado, ancho in zip(columnas, encabezados, anchos):
+        tabla.heading(columna, text=encabezado)
+        tabla.column(columna, width=ancho, minwidth=50, stretch=True, anchor="center")
+
+    tabla.grid(row=2, column=0, sticky="nsew", padx=10, pady=10)
+    
     # ---------- FUNCIONES ----------
     def sacar_id(texto):
         """De un texto como '3 - Don Quijote' devuelve el número 3."""
@@ -65,7 +68,7 @@ def crear_vista_compras(contenedor):
         for fila in tabla.get_children():
             tabla.delete(fila)
         for id_, fecha, cliente, libro, cantidad, total in obtener_compras():
-            tabla.insert("", "end", values=(id_, fecha, cliente, libro, cantidad, formatear_precio(total)))
+            tabla.insert("", "end", values=(id_, fecha, cliente, libro, cantidad, "$" + formatear_precio(total)))
 
     def registrar():
         texto_cliente = combo_cliente.get()

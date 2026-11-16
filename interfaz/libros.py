@@ -53,9 +53,11 @@ def crear_vista_libros(contenedor):
     # ---------- TABLA ----------
     columnas = ("id", "titulo", "autor", "precio", "stock")
     tabla = ttk.Treeview(contenedor, columns=columnas, show="headings")
-    for columna, encabezado in zip(columnas, ("ID", "Título", "Autor", "Precio", "Stock")):
+    encabezados = ("ID", "Título", "Autor", "Precio", "Stock")
+    anchos = (60, 320, 260, 140, 100)
+    for columna, encabezado, ancho in zip(columnas, encabezados, anchos):
         tabla.heading(columna, text=encabezado)
-        tabla.column(columna, width=120, anchor="center")
+        tabla.column(columna, width=ancho, minwidth=50, stretch=True, anchor="center")
     tabla.grid(row=2, column=0, sticky="nsew", padx=10, pady=10)
 
     # ---------- FUNCIONES ----------
