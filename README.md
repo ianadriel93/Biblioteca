@@ -37,7 +37,6 @@ La primera vez se crea solo el archivo `datos/biblioteca.db`.
 ```
 BIBLIOTECA/
 ├── main.py                  → arranca la aplicación
-├── probar.py                → script de prueba de la capa de datos
 ├── requirements.txt         → dependencias
 ├── datos/
 │   └── biblioteca.db        → base de datos (se crea sola)
@@ -74,7 +73,7 @@ El proyecto está separado en tres capas:
 - **Validación de datos** del formulario (campos vacíos, números, valores negativos, DNI).
 
 
-> Importante: los archivos de `base_datos/` e `interfaz/` no se ejecutan directamente. Siempre se arranca desde la raíz con `main.py` o `probar.py`.
+> Importante: los archivos de `base_datos/` e `interfaz/` no se ejecutan directamente. Siempre se arranca desde la raíz con `main.py`.
 
 ## Autor
 
