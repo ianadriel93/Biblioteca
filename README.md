@@ -13,7 +13,6 @@ Proyecto de estudio de la Tecnicatura Superior en Desarrollo de Software (ISPC).
   - Al registrar una compra se descuenta el stock; al anularla, se devuelve.
   - Si no hay stock suficiente, la compra no se registra.
   - No se puede eliminar un libro o cliente que ya tiene compras.
-- Los precios se muestran con formato argentino (`30.000`).
 
 ## Requisitos
 
