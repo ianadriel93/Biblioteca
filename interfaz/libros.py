@@ -90,7 +90,7 @@ def crear_vista_libros(contenedor):
         for fila in tabla.get_children():
             tabla.delete(fila)
         for id_libro, titulo, autor, precio, stock in obtener_libros():
-            tabla.insert("", "end", values=(id_libro, titulo, autor, formatear_precio(precio), stock))
+            tabla.insert("", "end", values=(id_libro, titulo, autor, "$" + formatear_precio(precio), stock))
 
     def agregar():
         datos = obtener_datos()
