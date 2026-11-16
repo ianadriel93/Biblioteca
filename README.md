@@ -73,13 +73,6 @@ El proyecto está separado en tres capas:
 - **Eventos** en la interfaz: `command=` en botones y `bind("<<TreeviewSelect>>")` en las tablas.
 - **Validación de datos** del formulario (campos vacíos, números, valores negativos, DNI).
 
-## Probar la capa de datos
-
-`probar.py` ejecuta pruebas sobre las funciones de `base_datos` sin abrir la interfaz. Se ejecuta desde la carpeta raíz:
-
-```
-python probar.py
-```
 
 > Importante: los archivos de `base_datos/` e `interfaz/` no se ejecutan directamente. Siempre se arranca desde la raíz con `main.py` o `probar.py`.
 
